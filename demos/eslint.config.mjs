@@ -39,7 +39,7 @@ export default [
       ...bestPractices.rules,
       ...errors.rules,
       ...node.rules,
-      ...style.rules,
+      // ...style.rules,
       ...variables.rules,
       ...es6.rules,
       ...imports.rules,
