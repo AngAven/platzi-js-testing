@@ -1,17 +1,18 @@
 const Person = require('./06-person')
+// AAA - Rule
 
 describe('person test', () => {
   let person = new Person()
 
-  beforeEach(() => {
+  beforeEach(() => { // Arrange - Given | Prepare instance for each test
     person = new Person('Angel', 45, 1.7)
   })
 
   test('should return down', () => {
     person.weight = 40
-    const imc = person.calcIMC()
+    const imc = person.calcIMC() // Act - when
     console.log(imc)
-    expect(imc).toBe('down')
+    expect(imc).toBe('down') // Assert - then
   })
 
   test('should return overweight level 2', () => {
