@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "start:dev": "DEBUG=app:* nodemon src/index.js",
     "start:prod": "NODE_ENV=production node src/index.js",
-    "test": "jest",
+    "test": "jest --forceExit",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix"
   },
@@ -21,6 +21,7 @@
     "mongodb": "^4.4.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.4.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
