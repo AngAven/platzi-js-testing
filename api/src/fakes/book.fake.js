@@ -1,20 +1,18 @@
 const { faker } = require('@faker-js/faker');
-const randomNumber = Math.floor(Math.random() * 100) + 1;
 
 const generateOneBook = () => ({
-  _id: faker.string.uuid(),
+  _id: faker.datatype.uuid(),
   name: faker.commerce.productName(),
   price: faker.commerce.price(),
 });
 
-const generateManyBooks = (size = randomNumber) => {
+const generateManyBook = (size) => {
+  const limit = size ?? 10;
   const fakeBooks = [];
-
-  for (let i = 0; i < size; i + 1) {
+  for (let index = 0; index < limit; index += 1) {
     fakeBooks.push(generateOneBook());
   }
-
   return [...fakeBooks];
 };
 
-module.exports = { generateOneBook, generateManyBooks };
+module.exports = { generateOneBook, generateManyBook };
