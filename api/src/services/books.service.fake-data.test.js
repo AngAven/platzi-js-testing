@@ -1,5 +1,5 @@
 const BooksService = require('./books.service');
-const { generateManyBooks } = require('../fakes/book.fake');
+const { generateManyBook } = require('../fakes/book.fake');
 
 const mockGetAll = jest.fn();
 
@@ -19,7 +19,7 @@ describe('Test for book service | black box', () => {
   describe('test for getBooks', () => {
     test('should return list of 2 books', async () => {
       // arrange
-      mockGetAll.mockResolvedValue(generateManyBooks(2));
+      mockGetAll.mockResolvedValue(generateManyBook(2));
       // act
       const books = await service.getBooks({});
       // console.log('books => ', books);
@@ -31,7 +31,7 @@ describe('Test for book service | black box', () => {
     });
 
     test('should return an specific book name', async () => {
-      const oneBookFake = generateManyBooks(1);
+      const oneBookFake = generateManyBook(1);
       const bookFakeName = oneBookFake[0].name;
       // arrange
       mockGetAll.mockResolvedValue(oneBookFake);
